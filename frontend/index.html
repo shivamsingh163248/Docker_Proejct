@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f2eb">
+  <title>Fieldnotes | Task board</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Fieldnotes home"><span class="brand-mark">F</span> fieldnotes<span class="brand-period">.</span></a>
+    <div class="system-status"><span class="status-dot" id="status-dot"></span><span id="connection-status">Connecting</span></div>
+  </header>
+
+  <main class="layout">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">YOUR SMALL-BUT-MIGHTY TASK BOARD</p>
+      <h1 id="page-title">Make room<br>for <em>good work.</em></h1>
+      <p class="intro-copy">A clear place to gather the next things that matter.</p>
+      <div class="tier-note"><span class="tier-line"></span><span>FRONTEND <b>·</b> API <b>·</b> DATABASE</span></div>
+    </section>
+
+    <section class="board" aria-label="Task board">
+      <div class="board-heading">
+        <div>
+          <p class="eyebrow">THE LIST</p>
+          <h2>Today's focus</h2>
+        </div>
+        <span class="count" id="task-count">0 ITEMS</span>
+      </div>
+
+      <form class="new-task" id="task-form">
+        <label class="sr-only" for="task-title">New task</label>
+        <input id="task-title" name="title" maxlength="160" placeholder="What needs doing?" autocomplete="off" required>
+        <button type="submit" aria-label="Add task" title="Add task"><span aria-hidden="true">+</span></button>
+      </form>
+      <p class="message" id="message" role="status" aria-live="polite"></p>
+      <ul class="task-list" id="task-list" aria-label="Tasks"></ul>
+      <div class="empty-state" id="empty-state">
+        <span class="empty-mark" aria-hidden="true">✳</span>
+        <p>No tasks yet. Start with one small thing.</p>
+      </div>
+      <footer class="board-footer"><span>One step at a time.</span><span class="footer-stamp">FN / 01</span></footer>
+    </section>
+  </main>
+
+  <div class="page-index" aria-hidden="true">01 — 03</div>
+</body>
+</html>
